@@ -22,6 +22,7 @@ int main()
     clock_t start_time = clock();
     clock_t end_time = 0;
     double total_time = 0;
+
     printf("sum is %d\n", AddN5(100));
     end_time = clock();
     total_time = ((double)(end_time - start_time)) / CLOCKS_PER_SEC;
