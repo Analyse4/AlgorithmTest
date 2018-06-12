@@ -33,6 +33,8 @@ Position FindPrevious(int X, List L);
 //从指定位置后面插入元素
 void Insert(int X, List L, Position P);
 
+void BadDeleteList(List L);
+
 void DeleteList(List L);
 
 Position Header(List L);

@@ -109,7 +109,7 @@ void Insert(int X, List L, Position P)
 
 
 //时间复杂度: O(n + n^2 + n + n) = O(n^2)
-void DeleteList(List L)
+void BadDeleteList(List L)
 {
     Position pNode = L->next;
     int count  = 0;
@@ -139,6 +139,23 @@ void DeleteList(List L)
     pNode->next = NULL;
 }
 
+
+//时间复杂度: O(n)
+void DeleteList(List L)
+{
+    Position pNode = L->next;
+    L->next = NULL;
+    Position pTemp = NULL;
+
+    while(pNode)
+    {
+        pTemp = pNode->next;
+        free(pNode);
+        pNode = pTemp;
+    }
+}
+
+
 Position Header(List L)
 {
     return NULL;//test
@@ -162,6 +179,12 @@ int Retrive(Position P)
 void PrintList(List L)
 {
     Position pNode = L;
+
+    if (IsEmpty(pNode))
+    {
+        printf("The list is empty!\n");
+    }
+
     printf("{");
     for (pNode; pNode->next != NULL; pNode = pNode->next)
     {
