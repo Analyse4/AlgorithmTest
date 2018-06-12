@@ -1,10 +1,12 @@
 #include"link_list.h"
 
-typedef struct Node
-{
-    int data;
-    Position next;
-}Node;
+/*
+ *typedef struct Node
+ *{
+ *    int data;
+ *    Position next;
+ *}Node;
+ */
 
 List InitList()
 {

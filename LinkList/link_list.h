@@ -4,10 +4,18 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+
+
 struct Node;
 typedef struct Node*    PtrToNode;
 typedef PtrToNode   List;
 typedef PtrToNode   Position;
+
+typedef struct Node
+{
+    int data;
+    Position next;
+}Node;
 
 List InitList();
 
