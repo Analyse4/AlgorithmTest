@@ -135,6 +135,8 @@ void DeleteList(List L)
         free(pNode->next);
         pNode = L;
     }
+
+    pNode->next = NULL;
 }
 
 Position Header(List L)
