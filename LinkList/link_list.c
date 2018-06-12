@@ -97,6 +97,8 @@ Position FindPrevious(int X, List L)
     }
 }
 
+
+//时间复杂度: O(1)
 void Insert(int X, List L, Position P)
 {
     Position pInsertNode = (Position)malloc(sizeof(Node));
@@ -105,9 +107,34 @@ void Insert(int X, List L, Position P)
     P->next = pInsertNode;
 }
 
+
+//时间复杂度: O(n + n^2 + n + n) = O(n^2)
 void DeleteList(List L)
 {
+    Position pNode = L->next;
+    int count  = 0;
 
+    while(pNode)
+    {
+        count++;
+        pNode = pNode->next;
+    }
+
+    /*printf("%d\n", count);*/
+
+    pNode = L;
+
+    int i =0, j = 0;
+    for (i = count - 1; i >=0; i--)
+    {
+        for (j = 1; j <= i; j++)
+        {
+            pNode = pNode->next;
+        }
+
+        free(pNode->next);
+        pNode = L;
+    }
 }
 
 Position Header(List L)
